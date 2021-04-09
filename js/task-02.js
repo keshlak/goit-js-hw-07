@@ -6,10 +6,17 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
+const ingredientsListRef = document.querySelector('#ingredients');
 
-// Сделал форИЧем и редьюсом, но не могу понять, как за одну операцию запушить все li...
-const ingredientsList = document.querySelector('#ingredients');
+const addItems = ingredients.map(item => {
+  const ingredientsItem = document.createElement('li');
+  ingredientsItem.textContent = item;
+  return ingredientsItem;
+});
 
+ingredientsListRef.append(...addItems);
+
+// Сделал форИЧем и редьюсом, но не мог понять, как за одну операцию запушить все li...
 // const addItems = array => {
 //   array.forEach(item => {
 //     const ingredientsItem = document.createElement('li'); //creates <li>
@@ -18,13 +25,14 @@ const ingredientsList = document.querySelector('#ingredients');
 //   });
 // };
 
-const addItems = array => {
-  array.reduce((ingredientsItemAcc, item) => {
-    // const ingredientsItem = document.createElement('li'); //creates <li>
-    ingredientsItemAcc = document.createElement('li');
-    ingredientsItemAcc.textContent = item; //adds required text to <li>
-    return ingredientsList.appendChild(ingredientsItemAcc); //adds <li> to <ul>
-  }, 0);
-};
+// const addItems = array => {
+//   array.reduce( item) => {
+//     // const ingredientsItem = document.createElement('li'); //creates <li>
+//     ingredientsItemAcc = document.createElement('li');
+//     console.log(ingredientsItemAcc);
+//     ingredientsItemAcc.textContent = item; //adds required text to <li>
+//     return ingredientsList.appendChild(ingredientsItemAcc); //adds <li> to <ul>
+//   }, 0);
+// };
 
-addItems(ingredients);
+// addItems(ingredients);
