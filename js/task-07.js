@@ -8,5 +8,4 @@ const textRef = document.querySelector('#text');
 inputRangeRef.addEventListener('input', function () {
   let fontSize = inputRangeRef.value;
   textRef.style.fontSize = fontSize + 'px';
-  console.log(inputRangeRef.value);
 });
