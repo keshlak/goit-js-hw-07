@@ -9,7 +9,7 @@ const validation = function () {
   if (inputRef.value.length === 0) {
     inputRef.className = '';
   } else if (
-    inputRef.value.length > Number(inputRef.getAttribute('data-length'))
+    inputRef.value.length >= Number(inputRef.getAttribute('data-length'))
   ) {
     inputRef.className = 'valid';
   } else inputRef.className = 'invalid';
